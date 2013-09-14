@@ -1,11 +1,9 @@
-#include <iostream>
-#include <Windows.h>
-#include <gl/GL.h>
-using namespace std;
+#include <QtWidgets>
 
-int main()
-{
-    cout << "Hello World!" << endl;
-    return 0;
+int main(int argc,char *argv[]){
+    QApplication app(argc,argv);
+    QWidget window;
+    window.resize(600,600);
+    window.show();
+    return app.exec();
 }
-
