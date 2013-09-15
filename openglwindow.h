@@ -2,7 +2,7 @@
 #define OPENGLWINDOW_H
 
 #include <QWindow>
-#include <QOpenGLFunctions>
+#include <QtGui>
 
 class OpenGLWindow : public QWindow, protected QOpenGLFunctions
 {
