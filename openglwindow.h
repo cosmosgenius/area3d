@@ -3,6 +3,7 @@
 
 #include <QWindow>
 #include <QtGui>
+#include <QOpenGLFunctions_3_1>
 
 class OpenGLWindow : public QWindow, protected QOpenGLFunctions
 {
@@ -13,8 +14,13 @@ public:
 
 protected:
     QOpenGLContext *m_context;
+    void render();
+    virtual void initialize();
+    void exposeEvent(QExposeEvent *event);
 
 private:
+    int increment;
+    QOpenGLFunctions_3_1 *m_funcs;
     GLuint VertexArrayID;
 };
 
