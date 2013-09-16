@@ -3,8 +3,10 @@ QT += core gui opengl
 TEMPLATE = app
 
 SOURCES += main.cpp \
-    openglwindow.cpp
+    openglwindow.cpp \
+    basegl.cpp
 
 HEADERS += \
-    openglwindow.h
+    openglwindow.h \
+    basegl.h
 
