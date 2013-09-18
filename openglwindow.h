@@ -1,10 +1,9 @@
 #ifndef OPENGLWINDOW_H
 #define OPENGLWINDOW_H
 
-#include <QtGui>
-#include <QOpenGLFunctions_3_1>
+#include "basegl.h"
 
-class OpenGLWindow : public QWindow, protected QOpenGLFunctions
+class OpenGLWindow : public Basegl
 {
     Q_OBJECT
 public:
@@ -14,8 +13,6 @@ public:
 protected:
     QOpenGLContext *m_context;
     void render();
-    virtual void initialize();
-    void exposeEvent(QExposeEvent *event);
 
 private:
     int increment;

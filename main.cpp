@@ -8,6 +8,6 @@ int main(int argc,char *argv[]){
 
     window.resize(400,400);
     window.show();
-
+    window.setAnimation(true);
     return app.exec();
 }
