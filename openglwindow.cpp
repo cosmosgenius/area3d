@@ -23,6 +23,7 @@ void OpenGLWindow::render()
         0.0f, 1.0f, 0.0f,
     };
     GLuint vertexbuffer;
+    m_funcs->glClearColor(0.0f,0.0f,0.0f,0.0f);
     m_funcs->glClear( GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT );
     m_funcs->glGenBuffers(1,&vertexbuffer);
     m_funcs->glBindBuffer(GL_ARRAY_BUFFER, vertexbuffer);
@@ -41,4 +42,8 @@ void OpenGLWindow::render()
     m_funcs->glDrawArrays(GL_TRIANGLES, 0, 3);
     m_funcs->glDisableVertexAttribArray(0);
     //qDebug() << "Render called";
+}
+
+void OpenGLWindow::resizeEvent(QResizeEvent *event){
+    m_funcs->glViewport(0, 0, (GLsizei) event->size().width(), (GLsizei) event->size().height());
 }

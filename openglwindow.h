@@ -18,6 +18,7 @@ private:
     int increment;
     QOpenGLFunctions_3_1 *m_funcs;
     GLuint VertexArrayID;
+    void resizeEvent(QResizeEvent *);
 };
 
 #endif // OPENGLWINDOW_H
